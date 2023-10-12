@@ -1,0 +1,3 @@
+# Ignorar el archivo de Settings donde se guarda la configuración
+/classes/base/settings.class.php
+/database/cargas/20231006.sql
