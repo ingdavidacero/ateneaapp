@@ -19,6 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 header('Content-Type: application/json');
 $data = $response->error_405();
 $response->createResponse($data);
-
+exit();
 
 ?>

@@ -34,5 +34,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $data = $response->error_405();
 $response->createResponse($data);
+exit();
 
 ?>

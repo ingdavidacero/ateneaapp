@@ -88,6 +88,36 @@
                 </code>
             </div>
         </section>
+
+        <section class="container-model">
+            <h3 class="switch-deploy">Category</h3>
+            <div class="target-deploy" id="question">
+                <code>
+                    <span class="code-title">GET /category</span>
+                    <br>
+                    <span class="code-description">/*This method is to get all catergories of the system.*/</span>
+                    <br>
+                    headers:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;token:string, -> Required
+                </code>
+            </div>
+        </section>
+        
+        <section class="container-model">
+            <h3 class="switch-deploy">Wildcard</h3>
+            <div class="target-deploy" id="question">
+                <code>
+                    <span class="code-title">GET /wildcard</span>
+                    <br>
+                    <span class="code-description">/*This method is to get all wildcard of the system.*/</span>
+                    <br>
+                    headers:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;token:string, -> Required
+                </code>
+            </div>
+        </section>
     </div>
     <script type="text/javascript" src="assets/scripts/home.js"></script>
 </body>

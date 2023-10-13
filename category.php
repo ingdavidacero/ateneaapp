@@ -1,9 +1,9 @@
 <?php
 
-require_once "classes/question.class.php";  
+require_once "classes/category.class.php";  
 require_once "classes/base/respuesta.class.php";
 
-$question = new Question;
+$category = new Category;
 $response = new Respuesta;
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
@@ -14,13 +14,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         exit();
     }
     $token = $headers['token'];
-    if(isset($headers['id'])){
-        $id=$headers['id'];
-        $data = $question->getQuestionById($id,$token);
-        $response->createResponse($data);
-        exit();
-    }
-    $data = $response->error_200('Falta algún parametro de consulta.');  
+    $data = $category->getAllCategories($token);
+
     $response->createResponse($data);
     exit();
 }

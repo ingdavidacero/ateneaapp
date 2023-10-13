@@ -49,11 +49,14 @@ class Database{
 		}else{
 			$error = self::getConnection()->errno.' '.self::getConnection()->error;
 		}
-		/*System::log(
+		System::log(
 			($sql?'Query: '.$sql.PHP_EOL:'') . 'Error: ' . $error,
 			$humanTime
-		);*/
-		exit($humanTime. ' :: ' .$externalMessage);
+		);
+		$response = new Respuesta;
+		$data = $response->error_500($externalMessage);
+		$response->createResponse($data);
+		exit();
 	}
 
     public function cleanValues($values, $type=null){
