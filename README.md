@@ -12,9 +12,7 @@ In order to run this project, certain folders and files must be created that I o
 
 ### Settings file
 
-In the /classes/base folder you must create a settings file with the following code:
-
-<?php
+In the /classes/base folder you must create a settings.class.php file with the following code:
 
 class Settings{
 	
@@ -36,8 +34,6 @@ class Settings{
 		],
 	];
 }
-
-?>
 
 ### Logs folder
 
