@@ -62,17 +62,24 @@ class Match{
         //Creación de preguntas default
         if(!isset($data_input['level'])){
             $data = $matches_answer->createDefaultMatch($match_id);
-            $response->createResponse($data);
-            exit();
+        }else{
+            $level = $data_input['level'];
+            $quantity = $data_input['quantity'];
+            $data = $matches_answer->createCustomMatch($match_id, $level, $quantity);
         }
-
-        $level = $data_input['level'];
-        $quantity = $data_input['quantity'];
-        
-        $data = $matches_answer->createCustomMatch($match_id, $level, $quantity);
         
         $connectiondb->commitTransaction();
-        return $match_id;
+
+        if(!$data){
+            return $response->error_500('Error interno, no se ha podido guardar la partida.');
+        }
+        
+        $result = $response->response;
+        $result['result'] = [
+            'mensaje' => 'La partida se creo de manera correcta.'
+        ];
+        
+        return $result;
     }
 
     private function getStatusMatchByUser($user_id){

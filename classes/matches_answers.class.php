@@ -134,11 +134,14 @@ class MatchesAnswers{
             [
                 ['ut.token',$token_str],
                 'AND',
-                ['ut.token_states_id', 1]
+                ['ut.token_states_id', 1],
+                'AND',
+                ['m.match_states_id', 1]
             ],
             'ORDER BY ma.number_question'
         );
         if(!$data){
+            $response = new Respuesta;
             $data = $response->error_200('La partida no tiene preguntas.');
             $response->createResponse($data);
             exit();
